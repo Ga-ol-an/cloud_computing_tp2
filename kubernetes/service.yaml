@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: song-recommender-goa-svc
+spec:
+  selector:
+    app: song-recommender-goa
+  ports:
+    - protocol: TCP
+      port: 50010
+      targetPort: 50010

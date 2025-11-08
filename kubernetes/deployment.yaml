@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: song-recommender-goa-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: song-recommender-goa
+  template:
+    metadata:
+      labels:
+        app: song-recommender-goa
+    spec:
+      containers:
+      #Model container:
+      - name: song-recommender-goa-model
+        image: quay.io/gaolan/song-recomender-model:0.2
+        imagePullPolicy: Always
+        env:
+        - name: MIN_CONFIDENCE
+          value: "0.1"
+        - name: MIN_SUPPORT_RATIO
+          value: "0.1"
+        volumeMounts:
+        - name: shared-volume
+          mountPath: /app/data
+
+        #Frontend container:
+      - name: song-recommender-goa-frontend
+        image: quay.io/gaolan/song-recomender-frontend:0.3
+        ports:
+        - containerPort: 50010
+        env:
+        - name: VERSION
+          value: "1.0.0"
+        - name: NB_RECOMENDATION_SONGS
+          value: "3"
+        volumeMounts:
+        - name: shared-volume
+          mountPath: /app/data
+    
+      volumes:
+        - name: shared-volume
+          persistentVolumeClaim:
+            claimName: song-recommender-goa-pvc

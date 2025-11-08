@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: song-recommender-goa-pvc
+  namespace: gabrielandrade
+spec:
+  storageClassName: default-storage-class-gabrielandrade
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  selector:
+    matchLabels:
+      namespace: gabrielandrade
