@@ -16,13 +16,15 @@ spec:
       containers:
       #Model container:
       - name: song-recommender-goa-model
-        image: quay.io/gaolan/song-recomender-model:0.2
+        image: quay.io/gaolan/song-recomender-model:0.3
         imagePullPolicy: Always
         env:
         - name: MIN_CONFIDENCE
           value: "0.1"
         - name: MIN_SUPPORT_RATIO
           value: "0.1"
+        - name: DATASET_ADDRESS
+          value: "https://homepages.dcc.ufmg.br/~cunha/hosted/cloudcomp-2023s2-datasets/2023_spotify_ds1.csv"
         volumeMounts:
         - name: shared-volume
           mountPath: /app/data

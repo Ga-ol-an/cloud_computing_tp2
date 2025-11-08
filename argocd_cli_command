@@ -1,0 +1,8 @@
+argocd app create song-recommender-goa \
+      --repo https://github.com/Ga-ol-an/cloud_computing_tp2 \
+      --path kubernetes \
+      --project $USER-project \
+      --dest-namespace $USER \
+      --dest-server https://kubernetes.default.svc \
+      --sync-policy auto
+# The shell will replace $USER with your username.

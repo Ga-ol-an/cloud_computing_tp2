@@ -10,9 +10,10 @@ def generate_playlist_rules():
   # Define the variables below based on the env values set in the Kubernetes deployment file
   MIN_SUPPORT_RATIO=float(os.getenv("MIN_SUPPORT_RATIO", "0.1"))
   MIN_CONFIDENCE=float(os.getenv("MIN_CONFIDENCE", "0.1"))
+  DATASET_ADDRESS=os.getenv("DATASET_ADDRESS", "https://homepages.dcc.ufmg.br/~cunha/hosted/cloudcomp-2023s2-datasets/2023_spotify_ds1.csv")
 
-  df = pd.read_csv("https://homepages.dcc.ufmg.br/~cunha/hosted/cloudcomp-2023s2-datasets/2023_spotify_ds1.csv")
-  
+  df = pd.read_csv(DATASET_ADDRESS)
+
   # itemset_list = df.groupby('pid')['track_name'].apply(list).to_list()
   
   itemset_list = (
