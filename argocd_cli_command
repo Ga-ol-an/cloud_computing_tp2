@@ -6,3 +6,6 @@ argocd app create song-recommender-goa \
       --dest-server https://kubernetes.default.svc \
       --sync-policy auto
 # The shell will replace $USER with your username.
+
+# The below command enables automatic pruning of resources that are no longer defined in the Git repository.
+argocd app set song-recommender-goa --auto-prune

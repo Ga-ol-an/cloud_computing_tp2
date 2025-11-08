@@ -5,7 +5,8 @@
 # with the input redirected via SSH tunnel.
 
 # Use the following to access the service locally:
-# ssh -L 50010:localhost:50010 usuario@10.43.155.95 
+# ssh -fNT -L 50010:10.43.155.95:50010 gabrielandrade@cloudvm2
+# After that you can use the localhost address to access the service from the local machine. 
 
 # The version was changed to 1.0.1 manually and github will push it
 
@@ -13,9 +14,9 @@ git add .
 git commit -m "[TP2] Measurement test script to monitor version changes"
 git push
 
-URL="http://10.43.155.95:50010/api/recommend"
+URL="http://localhost:50010/api/recommend"
 PAYLOAD='{"songs": ["Broccoli (feat. Lil Yachty)", "Bad and Boujee (feat. Lil Uzi Vert)", "Mask Off"]}'
-OLD_VERSION="1.0.0"
+OLD_VERSION="1.0.1"
 
 
 START=$(date +%s)
