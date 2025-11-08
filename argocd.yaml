@@ -1,0 +1,250 @@
+metadata:
+  creationTimestamp: "2025-11-08T15:52:22Z"
+  generation: 458
+  managedFields:
+  - apiVersion: argoproj.io/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        .: {}
+        f:destination:
+          .: {}
+          f:namespace: {}
+          f:server: {}
+        f:project: {}
+        f:source:
+          .: {}
+          f:path: {}
+          f:repoURL: {}
+        f:syncPolicy:
+          .: {}
+          f:automated:
+            .: {}
+            f:prune: {}
+      f:status:
+        .: {}
+        f:health: {}
+        f:sourceHydrator: {}
+        f:summary: {}
+        f:sync:
+          .: {}
+          f:comparedTo:
+            .: {}
+            f:destination: {}
+            f:source: {}
+    manager: argocd-server
+    operation: Update
+    time: "2025-11-08T17:10:06Z"
+  - apiVersion: argoproj.io/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:controllerNamespace: {}
+        f:health:
+          f:lastTransitionTime: {}
+          f:status: {}
+        f:history: {}
+        f:operationState:
+          .: {}
+          f:finishedAt: {}
+          f:message: {}
+          f:operation:
+            .: {}
+            f:initiatedBy:
+              .: {}
+              f:automated: {}
+            f:retry:
+              .: {}
+              f:limit: {}
+            f:sync:
+              .: {}
+              f:prune: {}
+              f:revision: {}
+          f:phase: {}
+          f:startedAt: {}
+          f:syncResult:
+            .: {}
+            f:resources: {}
+            f:revision: {}
+            f:source:
+              .: {}
+              f:path: {}
+              f:repoURL: {}
+        f:reconciledAt: {}
+        f:resourceHealthSource: {}
+        f:resources: {}
+        f:sourceType: {}
+        f:summary:
+          f:images: {}
+        f:sync:
+          f:comparedTo:
+            f:destination:
+              f:namespace: {}
+              f:server: {}
+            f:source:
+              f:path: {}
+              f:repoURL: {}
+          f:revision: {}
+          f:status: {}
+    manager: argocd-application-controller
+    operation: Update
+    time: "2025-11-08T22:23:57Z"
+  name: song-recommender-goa
+  namespace: argocd
+  resourceVersion: "16062621"
+  uid: f293eadc-3dd1-4f19-9b48-e28f7d060427
+spec:
+  destination:
+    namespace: gabrielandrade
+    server: https://kubernetes.default.svc
+  project: gabrielandrade-project
+  source:
+    path: kubernetes
+    repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+  syncPolicy:
+    automated:
+      prune: true
+status:
+  controllerNamespace: argocd
+  health:
+    lastTransitionTime: "2025-11-08T17:15:57Z"
+    status: Healthy
+  history:
+  - deployStartedAt: "2025-11-08T15:52:22Z"
+    deployedAt: "2025-11-08T15:52:23Z"
+    id: 0
+    initiatedBy:
+      automated: true
+    revision: b77e085180421c23f012990a44c4fa4f12638449
+    source:
+      path: kubernetes
+      repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+  - deployStartedAt: "2025-11-08T16:08:06Z"
+    deployedAt: "2025-11-08T16:08:06Z"
+    id: 1
+    initiatedBy:
+      automated: true
+    revision: b0302f8b4847e04f33d7dbccfaedf0c547a1f268
+    source:
+      path: kubernetes
+      repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+  - deployStartedAt: "2025-11-08T17:01:36Z"
+    deployedAt: "2025-11-08T17:01:37Z"
+    id: 2
+    initiatedBy:
+      automated: true
+    revision: 1f6cc7d7af2154b6e1563660f86816562df2c86c
+    source:
+      path: kubernetes
+      repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+  - deployStartedAt: "2025-11-08T17:15:26Z"
+    deployedAt: "2025-11-08T17:15:27Z"
+    id: 3
+    initiatedBy:
+      automated: true
+    revision: d225cdbb13340f2dfdbb43f7daa853f287c109df
+    source:
+      path: kubernetes
+      repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+  operationState:
+    finishedAt: "2025-11-08T17:15:27Z"
+    message: successfully synced (all tasks run)
+    operation:
+      initiatedBy:
+        automated: true
+      retry:
+        limit: 5
+      sync:
+        prune: true
+        revision: d225cdbb13340f2dfdbb43f7daa853f287c109df
+    phase: Succeeded
+    startedAt: "2025-11-08T17:15:26Z"
+    syncResult:
+      resources:
+      - group: apps
+        hookPhase: Succeeded
+        images:
+        - quay.io/gaolan/song-recomender-model:0.3
+        - quay.io/gaolan/song-recomender-frontend:0.3
+        kind: Deployment
+        message: pruned
+        name: song-recommender-goa-deployment-ds1-v1.0.1
+        namespace: gabrielandrade
+        status: Pruned
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: PersistentVolumeClaim
+        message: persistentvolumeclaim/song-recommender-goa-pvc unchanged
+        name: song-recommender-goa-pvc
+        namespace: gabrielandrade
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/song-recommender-goa-svc unchanged
+        name: song-recommender-goa-svc
+        namespace: gabrielandrade
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        images:
+        - quay.io/gaolan/song-recomender-model:0.3
+        - quay.io/gaolan/song-recomender-frontend:0.3
+        kind: Deployment
+        message: deployment.apps/song-recommender-goa-deployment-ds1-v1.0.2 created
+        name: song-recommender-goa-deployment-ds1-v1.0.2
+        namespace: gabrielandrade
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      revision: d225cdbb13340f2dfdbb43f7daa853f287c109df
+      source:
+        path: kubernetes
+        repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+  reconciledAt: "2025-11-08T22:23:57Z"
+  resourceHealthSource: appTree
+  resources:
+  - health:
+      status: Healthy
+    kind: PersistentVolumeClaim
+    name: song-recommender-goa-pvc
+    namespace: gabrielandrade
+    status: Synced
+    version: v1
+  - health:
+      status: Healthy
+    kind: Service
+    name: song-recommender-goa-svc
+    namespace: gabrielandrade
+    status: Synced
+    version: v1
+  - group: apps
+    health:
+      status: Healthy
+    kind: Deployment
+    name: song-recommender-goa-deployment-ds1-v1.0.2
+    namespace: gabrielandrade
+    status: Synced
+    version: v1
+  sourceHydrator: {}
+  sourceType: Directory
+  summary:
+    images:
+    - quay.io/gaolan/song-recomender-frontend:0.3
+    - quay.io/gaolan/song-recomender-model:0.3
+  sync:
+    comparedTo:
+      destination:
+        namespace: gabrielandrade
+        server: https://kubernetes.default.svc
+      source:
+        path: kubernetes
+        repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+    revision: d225cdbb13340f2dfdbb43f7daa853f287c109df
+    status: Synced
