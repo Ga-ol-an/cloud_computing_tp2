@@ -11,12 +11,12 @@
 # The version was changed to 1.0.1 manually and github will push it
 
 git add .
-git commit -m "[TP2] Measurement test script to monitor dataset changes - att. 2"
+git commit -m "[TP2] Measurement test script to monitor dataset changes - att. 3"
 git push
 
 URL="http://localhost:50010/api/recommend"
 PAYLOAD='{"songs": ["Broccoli (feat. Lil Yachty)", "Bad and Boujee (feat. Lil Uzi Vert)", "Mask Off"]}'
-OLD_VERSION="1.0.1"
+OLD_VERSION="1.0.2"
 
 
 START=$(date +%s)
