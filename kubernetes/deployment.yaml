@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: song-recommender-goa-deployment-ds1-v1.0.2
+  name: song-recommender-goa-deployment-ds2-v1.0.2
 spec:
   replicas: 2
   selector:
@@ -24,7 +24,7 @@ spec:
         - name: MIN_SUPPORT_RATIO
           value: "0.1"
         - name: DATASET_ADDRESS
-          value: "https://homepages.dcc.ufmg.br/~cunha/hosted/cloudcomp-2023s2-datasets/2023_spotify_ds1.csv"
+          value: "https://homepages.dcc.ufmg.br/~cunha/hosted/cloudcomp-2023s2-datasets/2023_spotify_ds2.csv"
         volumeMounts:
         - name: shared-volume
           mountPath: /app/data

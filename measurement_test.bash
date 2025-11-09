@@ -11,7 +11,7 @@
 # The version was changed to 1.0.1 manually and github will push it
 
 git add .
-git commit -m "[TP2] Measurement test script to monitor dataset changes"
+git commit -m "[TP2] Measurement test script to monitor dataset changes - att. 2"
 git push
 
 URL="http://localhost:50010/api/recommend"
