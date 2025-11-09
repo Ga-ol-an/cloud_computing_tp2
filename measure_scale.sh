@@ -1,6 +1,9 @@
 #!/bin/bash
 export KUBECONFIG="$HOME/.kube/config"
 
+# This one goes in the server and is callend by my change_nb_replicas.bash script on my local machine
+# It measures the time taken for the number of available replicas to reach 2 after changing the deployment.
+
 t0=$(date +%s)
 
 while :; do
