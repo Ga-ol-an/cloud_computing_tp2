@@ -1,6 +1,6 @@
 metadata:
   creationTimestamp: "2025-11-08T15:52:22Z"
-  generation: 458
+  generation: 1845
   managedFields:
   - apiVersion: argoproj.io/v1alpha1
     fieldsType: FieldsV1
@@ -88,10 +88,10 @@ metadata:
           f:status: {}
     manager: argocd-application-controller
     operation: Update
-    time: "2025-11-08T22:23:57Z"
+    time: "2025-11-09T19:04:47Z"
   name: song-recommender-goa
   namespace: argocd
-  resourceVersion: "16062621"
+  resourceVersion: "16478823"
   uid: f293eadc-3dd1-4f19-9b48-e28f7d060427
 spec:
   destination:
@@ -107,7 +107,7 @@ spec:
 status:
   controllerNamespace: argocd
   health:
-    lastTransitionTime: "2025-11-08T17:15:57Z"
+    lastTransitionTime: "2025-11-09T19:01:16Z"
     status: Healthy
   history:
   - deployStartedAt: "2025-11-08T15:52:22Z"
@@ -146,8 +146,53 @@ status:
     source:
       path: kubernetes
       repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+  - deployStartedAt: "2025-11-09T18:49:31Z"
+    deployedAt: "2025-11-09T18:49:32Z"
+    id: 4
+    initiatedBy:
+      automated: true
+    revision: 48a11fc5508522a9215e12eadab7f067be320fba
+    source:
+      path: kubernetes
+      repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+  - deployStartedAt: "2025-11-09T18:55:21Z"
+    deployedAt: "2025-11-09T18:55:22Z"
+    id: 5
+    initiatedBy:
+      automated: true
+    revision: 70716c934473d14370c60839dd8dd40ecf579b50
+    source:
+      path: kubernetes
+      repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+  - deployStartedAt: "2025-11-09T18:57:15Z"
+    deployedAt: "2025-11-09T18:57:16Z"
+    id: 6
+    initiatedBy:
+      automated: true
+    revision: c9a02f0e06024ff5e9deafc579a7cb54ffea0e04
+    source:
+      path: kubernetes
+      repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+  - deployStartedAt: "2025-11-09T18:58:57Z"
+    deployedAt: "2025-11-09T18:58:58Z"
+    id: 7
+    initiatedBy:
+      automated: true
+    revision: f7a801e5dbc0bd6256f575ba777e3e112d20dbcb
+    source:
+      path: kubernetes
+      repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
+  - deployStartedAt: "2025-11-09T19:00:44Z"
+    deployedAt: "2025-11-09T19:00:45Z"
+    id: 8
+    initiatedBy:
+      automated: true
+    revision: 1360baddb3b6b82a83cfa9ec7106a131a48a51c2
+    source:
+      path: kubernetes
+      repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
   operationState:
-    finishedAt: "2025-11-08T17:15:27Z"
+    finishedAt: "2025-11-09T19:00:45Z"
     message: successfully synced (all tasks run)
     operation:
       initiatedBy:
@@ -156,9 +201,9 @@ status:
         limit: 5
       sync:
         prune: true
-        revision: d225cdbb13340f2dfdbb43f7daa853f287c109df
+        revision: 1360baddb3b6b82a83cfa9ec7106a131a48a51c2
     phase: Succeeded
-    startedAt: "2025-11-08T17:15:26Z"
+    startedAt: "2025-11-09T19:00:44Z"
     syncResult:
       resources:
       - group: apps
@@ -168,7 +213,7 @@ status:
         - quay.io/gaolan/song-recomender-frontend:0.3
         kind: Deployment
         message: pruned
-        name: song-recommender-goa-deployment-ds1-v1.0.1
+        name: song-recommender-goa-deployment-ds2-v1.0.2
         namespace: gabrielandrade
         status: Pruned
         syncPhase: Sync
@@ -197,17 +242,17 @@ status:
         - quay.io/gaolan/song-recomender-model:0.3
         - quay.io/gaolan/song-recomender-frontend:0.3
         kind: Deployment
-        message: deployment.apps/song-recommender-goa-deployment-ds1-v1.0.2 created
-        name: song-recommender-goa-deployment-ds1-v1.0.2
+        message: deployment.apps/song-recommender-goa-deployment-ds1-v1.0.3 created
+        name: song-recommender-goa-deployment-ds1-v1.0.3
         namespace: gabrielandrade
         status: Synced
         syncPhase: Sync
         version: v1
-      revision: d225cdbb13340f2dfdbb43f7daa853f287c109df
+      revision: 1360baddb3b6b82a83cfa9ec7106a131a48a51c2
       source:
         path: kubernetes
         repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
-  reconciledAt: "2025-11-08T22:23:57Z"
+  reconciledAt: "2025-11-09T19:04:47Z"
   resourceHealthSource: appTree
   resources:
   - health:
@@ -228,7 +273,7 @@ status:
     health:
       status: Healthy
     kind: Deployment
-    name: song-recommender-goa-deployment-ds1-v1.0.2
+    name: song-recommender-goa-deployment-ds1-v1.0.3
     namespace: gabrielandrade
     status: Synced
     version: v1
@@ -246,5 +291,5 @@ status:
       source:
         path: kubernetes
         repoURL: https://github.com/Ga-ol-an/cloud_computing_tp2
-    revision: d225cdbb13340f2dfdbb43f7daa853f287c109df
+    revision: 1360baddb3b6b82a83cfa9ec7106a131a48a51c2
     status: Synced
